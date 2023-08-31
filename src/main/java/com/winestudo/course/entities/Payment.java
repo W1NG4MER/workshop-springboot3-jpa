@@ -3,6 +3,8 @@ package com.winestudo.course.entities;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Table;
 
 import jakarta.persistence.Entity;
@@ -22,6 +24,7 @@ public class Payment implements Serializable{
     private Long id;
     private Instant moment;
 
+    @JsonIgnore
     @OneToOne
     @MapsId
     private Order order;
